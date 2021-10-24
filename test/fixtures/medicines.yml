@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  quantity: 1
+  medicine_validity: 2021-10-24
+  medicine_insert: MyText
+  take_to: MyString
+  purchase_date: 2021-10-24
+
+two:
+  name: MyString
+  quantity: 1
+  medicine_validity: 2021-10-24
+  medicine_insert: MyText
+  take_to: MyString
+  purchase_date: 2021-10-24
