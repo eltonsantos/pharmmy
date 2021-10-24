@@ -19,7 +19,7 @@ class MedicinesTest < ApplicationSystemTestCase
     fill_in "Name", with: @medicine.name
     fill_in "Purchase date", with: @medicine.purchase_date
     fill_in "Quantity", with: @medicine.quantity
-    fill_in "Take to", with: @medicine.take_to
+    fill_in "Used to", with: @medicine.used_to
     click_on "Create Medicine"
 
     assert_text "Medicine was successfully created"
@@ -35,7 +35,7 @@ class MedicinesTest < ApplicationSystemTestCase
     fill_in "Name", with: @medicine.name
     fill_in "Purchase date", with: @medicine.purchase_date
     fill_in "Quantity", with: @medicine.quantity
-    fill_in "Take to", with: @medicine.take_to
+    fill_in "Used to", with: @medicine.used_to
     click_on "Update Medicine"
 
     assert_text "Medicine was successfully updated"

@@ -5,7 +5,7 @@ class CreateMedicines < ActiveRecord::Migration[6.1]
       t.integer :quantity
       t.date :medicine_validity
       t.text :medicine_insert
-      t.string :take_to
+      t.string :used_to
       t.date :purchase_date
 
       t.timestamps

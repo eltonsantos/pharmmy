@@ -5,7 +5,7 @@ one:
   quantity: 1
   medicine_validity: 2021-10-24
   medicine_insert: MyText
-  take_to: MyString
+  used_to: MyString
   purchase_date: 2021-10-24
 
 two:
@@ -13,5 +13,5 @@ two:
   quantity: 1
   medicine_validity: 2021-10-24
   medicine_insert: MyText
-  take_to: MyString
+  used_to: MyString
   purchase_date: 2021-10-24

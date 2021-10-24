@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :medicine_categories
   resources :categories
   resources :medicines
   get 'home/index'

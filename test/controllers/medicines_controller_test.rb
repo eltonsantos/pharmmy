@@ -17,7 +17,7 @@ class MedicinesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create medicine" do
     assert_difference('Medicine.count') do
-      post medicines_url, params: { medicine: { medicine_insert: @medicine.medicine_insert, medicine_validity: @medicine.medicine_validity, name: @medicine.name, purchase_date: @medicine.purchase_date, quantity: @medicine.quantity, take_to: @medicine.take_to } }
+      post medicines_url, params: { medicine: { medicine_insert: @medicine.medicine_insert, medicine_validity: @medicine.medicine_validity, name: @medicine.name, purchase_date: @medicine.purchase_date, quantity: @medicine.quantity, used_to: @medicine.used_to } }
     end
 
     assert_redirected_to medicine_url(Medicine.last)
@@ -34,7 +34,7 @@ class MedicinesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update medicine" do
-    patch medicine_url(@medicine), params: { medicine: { medicine_insert: @medicine.medicine_insert, medicine_validity: @medicine.medicine_validity, name: @medicine.name, purchase_date: @medicine.purchase_date, quantity: @medicine.quantity, take_to: @medicine.take_to } }
+    patch medicine_url(@medicine), params: { medicine: { medicine_insert: @medicine.medicine_insert, medicine_validity: @medicine.medicine_validity, name: @medicine.name, purchase_date: @medicine.purchase_date, quantity: @medicine.quantity, used_to: @medicine.used_to } }
     assert_redirected_to medicine_url(@medicine)
   end
 

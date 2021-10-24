@@ -1,2 +1,0 @@
-module MedicineCategoriesHelper
-end
