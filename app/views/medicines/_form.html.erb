@@ -4,6 +4,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
+    <%= f.file_field :picture %>
     <%= f.input :name %>
     <%= f.input :quantity %>
     <%= f.input :medicine_validity %>
