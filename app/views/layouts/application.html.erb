@@ -12,6 +12,7 @@
 
   <body>
      <% if user_signed_in? %>
+      <br />
       <%=link_to "Sair", destroy_user_session_path, method: :delete %> 
      <% end %>
     <%= yield %>
