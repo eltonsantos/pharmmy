@@ -25,12 +25,26 @@
         <td><%= medicine.purchase_date.strftime("%d/%m/%Y") %></td>
         <td>
           <% medicine.categories.each do |c| %>
-            <%= c.name %>
+            <span class="badge bg-info">
+              <%= c.name %>
+            </span>
           <% end %>
         </td>
-        <td><%= link_to 'Detalhes', medicine %></td>
-        <td><%= link_to 'Editar', edit_medicine_path(medicine) %></td>
-        <td><%= link_to 'Excluir', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to medicine do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_medicine_path(medicine) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to medicine, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fas fa-times-circle red"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

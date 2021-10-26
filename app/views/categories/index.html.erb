@@ -16,8 +16,16 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td><%= link_to 'Editar', edit_category_path(category) %></td>
-        <td><%= link_to 'Remover', category, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td>
+          <%= link_to edit_category_path(category) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to category, method: :delete, data: { confirm: 'Tem certeza?' } do %>
+            <i class="fas fa-times-circle red"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,6 +34,5 @@
 <br>
 
 <%= link_to new_category_path, class: "btn btn-primary" do %>
-  <i class="fas fa-check-circle"></i>
   Nova Categoria
 <% end %>

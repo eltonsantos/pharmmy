@@ -40,9 +40,14 @@
 <p>
   <strong>Categorias:</strong>
   <% @medicine.categories.each do |c| %>
-    <%= c.name %>
+    <span class="badge bg-info">
+      <%= c.name %>
+    </span>
   <% end %>
 </p>
 
-<%= link_to 'Editar', edit_medicine_path(@medicine) %> |
+<%= link_to edit_medicine_path(@medicine), class: "btn btn-primary" do %>
+  Editar
+<% end %>
+
 <%= link_to 'Voltar', medicines_path %>
