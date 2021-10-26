@@ -5,12 +5,13 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Quantity</th>
-      <th>Medicine validity</th>
-      <th>Medicine insert</th>
-      <th>Used to</th>
-      <th>Purchase date</th>
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Validade</th>
+      <th>Bula</th>
+      <th>Usei para</th>
+      <th>Data de compra</th>
+      <th>Categoria</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= medicine.medicine_insert %></td>
         <td><%= medicine.used_to %></td>
         <td><%= medicine.purchase_date %></td>
+        <td><%= medicine.categories %></td>
         <td><%= link_to 'Show', medicine %></td>
         <td><%= link_to 'Edit', edit_medicine_path(medicine) %></td>
         <td><%= link_to 'Destroy', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>

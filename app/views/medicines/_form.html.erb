@@ -5,12 +5,13 @@
 
   <div class="form-inputs">
     <%= f.file_field :picture %>
-    <%= f.input :name %>
-    <%= f.input :quantity %>
-    <%= f.input :medicine_validity %>
-    <%= f.input :medicine_insert %>
-    <%= f.input :used_to %>
-    <%= f.input :purchase_date %>
+    <%= f.input :name, label: "Nome" %>
+    <%= f.input :quantity, label: "Quantidade" %>
+    <%= f.input :medicine_validity, label: "Validade" %>
+    <%= f.input :medicine_insert, label: "Bula" %>
+    <%= f.input :used_to, label: "Usado para"%>
+    <%= f.input :purchase_date, label: "Comprado em" %>
+    <%= f.association :categories, as: :check_boxes, label: "Categorias" %>
   </div>
 
   <div class="form-actions">

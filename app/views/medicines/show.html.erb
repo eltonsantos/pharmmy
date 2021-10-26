@@ -1,40 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Picture:</strong>
+  <strong>Foto:</strong>
   <% if @medicine.picture.attached? %>
     <%= image_tag @medicine.picture %>
   <% end %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @medicine.name %>
 </p>
 
 <p>
-  <strong>Quantity:</strong>
+  <strong>Quantidade:</strong>
   <%= @medicine.quantity %>
 </p>
 
 <p>
-  <strong>Medicine validity:</strong>
+  <strong>Validade:</strong>
   <%= @medicine.medicine_validity %>
 </p>
 
 <p>
-  <strong>Medicine insert:</strong>
+  <strong>Bula:</strong>
   <%= @medicine.medicine_insert %>
 </p>
 
 <p>
-  <strong>Used to:</strong>
+  <strong>Usei para:</strong>
   <%= @medicine.used_to %>
 </p>
 
 <p>
-  <strong>Purchase date:</strong>
+  <strong>Data de compra:</strong>
   <%= @medicine.purchase_date %>
+</p>
+
+<p>
+  <strong>Categorias:</strong>
+  <% @medicine.categories.each do |c| %>
+    <%= c.name %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_medicine_path(@medicine) %> |
