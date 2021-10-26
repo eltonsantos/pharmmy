@@ -4,32 +4,36 @@
 
 <%= link_to 'Voltar', root_path %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
+<% if @categories.any? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= category.name %></td>
-        <td>
-          <%= link_to edit_category_path(category) do %>
-            <i class="fas fa-edit"></i>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to category, method: :delete, data: { confirm: 'Tem certeza?' } do %>
-            <i class="fas fa-times-circle red"></i>
-          <% end %>
-        </td>
+        <th>Nome</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td>
+            <%= link_to edit_category_path(category) do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to category, method: :delete, data: { confirm: 'Tem certeza?' } do %>
+              <i class="fas fa-times-circle red"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  Não há categoria cadastrada
+<% end %>
 
 <br>
 
