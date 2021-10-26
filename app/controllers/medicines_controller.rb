@@ -25,7 +25,7 @@ class MedicinesController < ApplicationController
 
     respond_to do |format|
       if @medicine.save
-        format.html { redirect_to @medicine, notice: "Medicine was successfully created." }
+        format.html { redirect_to @medicine, notice: "Remédio salvo com sucesso." }
         format.json { render :show, status: :created, location: @medicine }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class MedicinesController < ApplicationController
   def update
     respond_to do |format|
       if @medicine.update(medicine_params)
-        format.html { redirect_to @medicine, notice: "Medicine was successfully updated." }
+        format.html { redirect_to @medicine, notice: "Remédio atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @medicine }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class MedicinesController < ApplicationController
   def destroy
     @medicine.destroy
     respond_to do |format|
-      format.html { redirect_to medicines_url, notice: "Medicine was successfully destroyed." }
+      format.html { redirect_to medicines_url, notice: "Remédio excluído com sucesso." }
       format.json { head :no_content }
     end
   end
@@ -64,6 +64,6 @@ class MedicinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def medicine_params
-      params.require(:medicine).permit(:picture, :name, :quantity, :medicine_validity, :medicine_insert, :used_to, :purchase_date, :category_ids)
+      params.require(:medicine).permit(:picture, :name, :quantity, :medicine_validity, :medicine_insert, :used_to, :purchase_date, category_ids: [])
     end
 end

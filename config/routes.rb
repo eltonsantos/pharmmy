@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :categories
+  devise_for :users, skip: [:registrations]
+  resources :categories, except: :show
   resources :medicines
   get 'home/index'
 

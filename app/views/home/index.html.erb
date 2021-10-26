@@ -3,10 +3,13 @@
 <% if Medicine.last == nil %>
   <p>Não foi possível atualizar os remédios</p>
 <% else %>  
-  <p>Lista de remédios que tenho em casa | Atualizado em: <%= Medicine.last.updated_at %> </p>
+  <p>Lista de remédios que tenho em casa | Atualizado em: <%= Medicine.last.updated_at.strftime("%d/%m/%Y") %> </p>
 <% end %>
 <ul>
   <li>
     <%= link_to "Remédios", medicines_path %>
+  </li>
+  <li>
+    <%= link_to "Categorias", categories_path %>
   </li>
 </ul>
