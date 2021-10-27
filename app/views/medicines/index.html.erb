@@ -7,8 +7,10 @@
 <%= search_form_for @q, html: { class: '' } do |f| %>
   <%= f.input :name_cont, label: false, placeholder: 'Nome' %>
   <%= f.input :categories_medicine_categories_category_name_cont, label: false, placeholder: 'Categoria' %>
-  <%= f.button :submit, 'Buscar', name: '' %>
+  <%= f.button :submit, 'Buscar', name: '', class: 'btn btn-warning'%>
 <% end %>
+
+<br />
 
 <% if @medicines.any? %>
   <table>
@@ -61,6 +63,6 @@
 <% end %>
 <br>
 
-<%= link_to new_medicine_path, class: "btn btn-primary" do %>
+<%= link_to new_medicine_path, class: "btn btn-green" do %>
   Novo Remédio
 <% end %>
