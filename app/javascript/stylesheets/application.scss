@@ -14,10 +14,14 @@ body {
   line-height: 1.5;
   color: #525f7f;
   text-align: left;
-  background-color: #fff;
+  background-color: #1171ef;
 }
 
 .app {
+  height: 100%;
+}
+
+.main-wrapper {
   height: 100%;
 }
 
@@ -151,4 +155,21 @@ p {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.navbar-expand-lg {
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.navbar, .navbar>.container, .navbar>.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  position: relative;
+  padding: 1rem;
 }
