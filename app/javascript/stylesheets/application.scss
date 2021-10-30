@@ -173,3 +173,31 @@ p {
   position: relative;
   padding: 1rem;
 }
+
+.table-edit {
+  // border-top: 1px solid #ccc;
+}
+
+.table-edit th {
+  color: #555;
+}
+
+.table > :not(:first-child) {
+  border-top: 2px solid #444;
+}
+
+.btn-align {
+  margin-bottom: 15px;
+}
+
+.btn-margin {
+  margin-bottom: 15px;
+}
+
+.red {
+  color: #f00
+}
+
+.green {
+  color: #4ce59c;
+}
