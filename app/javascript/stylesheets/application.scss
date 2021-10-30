@@ -174,10 +174,6 @@ p {
   padding: 1rem;
 }
 
-.table-edit {
-  // border-top: 1px solid #ccc;
-}
-
 .table-edit th {
   color: #555;
 }
@@ -200,4 +196,13 @@ p {
 
 .green {
   color: #4ce59c;
+}
+
+.divisor {
+  margin: 10px;
+  text-align: center;
+}
+
+.form-register, small.form-text, small.text-muted {
+  color: #fff !important;
 }

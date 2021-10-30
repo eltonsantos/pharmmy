@@ -1,6 +1,8 @@
 class MedicinesController < ApplicationController
   before_action :set_medicine, only: %i[ show edit update destroy ]
 
+  load_and_authorize_resource
+
   # GET /medicines or /medicines.json
   def index
     @q = Medicine.ransack(params[:q])

@@ -46,8 +46,10 @@
   <% end %>
 </p>
 
-<%= link_to edit_medicine_path(@medicine), class: "btn btn-primary" do %>
-  Editar
+<% if can? :manage, @medicine %>
+  <%= link_to edit_medicine_path(@medicine), class: "btn btn-primary" do %>
+    Editar
+  <% end %>
 <% end %>
 
 <%= link_to 'Voltar', medicines_path %>

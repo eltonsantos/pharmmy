@@ -63,16 +63,20 @@
               <i class="fas fa-search"></i>
             <% end %>
           </td>
-          <td>
-            <%= link_to edit_medicine_path(medicine) do %>
-              <i class="fas fa-edit"></i>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to medicine, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="fas fa-times-circle red"></i>
-            <% end %>
-          </td>
+          <% if can? :manage, medicine %>
+            <td>
+              <%= link_to edit_medicine_path(medicine) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+            </td>
+          <% end %>
+          <% if can? :manage, medicine %>
+            <td>
+              <%= link_to medicine, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fas fa-times-circle red"></i>
+              <% end %>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
