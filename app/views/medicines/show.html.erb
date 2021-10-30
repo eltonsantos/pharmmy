@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="d-flex flex-row bd-highlight mb-3">
+  <h1 class="bd-highlight">Detalhes do remédio</h1>
+  <%= link_to 'Voltar', medicines_path, class: "m-3 bd-highlight" %>
+</div>
+
 <p>
   <strong>Foto:</strong>
   <% if @medicine.picture.attached? %>
@@ -47,9 +52,7 @@
 </p>
 
 <% if can? :manage, @medicine %>
-  <%= link_to edit_medicine_path(@medicine), class: "btn btn-primary" do %>
+  <%= link_to edit_medicine_path(@medicine), class: "btn btn-warning btn-margin-bottom" do %>
     Editar
   <% end %>
 <% end %>
-
-<%= link_to 'Voltar', medicines_path %>

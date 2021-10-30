@@ -3,13 +3,38 @@
 <% if Medicine.last == nil %>
   <p>Não foi possível atualizar os remédios</p>
 <% else %>  
-  <p>Lista de remédios que tenho em casa | Atualizado em: <%= Medicine.last.updated_at.strftime("%d/%m/%Y") %> </p>
+  <p>Lista de remédios que tenho em casa | Atualizado em:
+    <span class="badge bg-dark">
+      <%= Medicine.last.updated_at.strftime("%d/%m/%Y") %>
+    </span> 
+  </p>
+
+  <br />
+
+  <div class="row btn-margin-bottom">
+    <div class="col-4">
+      <%= link_to medicines_path, class: "btn btn-primary" do %>
+        Remédios cadastrados
+        <span class="badge bg-secondary">
+          <%= Medicine.count %>
+        </span>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <%= link_to categories_path, class: "btn btn-info" do %>
+        Categorias cadastradas
+        <span class="badge bg-secondary">
+          <%= Category.count %>
+        </span>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <button type="button" class="btn btn-warning pe-none">
+         Próximo ao vencimento
+         <span class="badge bg-secondary">
+          0
+         </span>
+      </button>
+    </div>
+  </div>
 <% end %>
-<ul>
-  <li>
-    <%= link_to "Remédios", medicines_path %>
-  </li>
-  <li>
-    <%= link_to "Categorias", categories_path %>
-  </li>
-</ul>

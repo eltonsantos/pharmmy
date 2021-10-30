@@ -1,6 +1,6 @@
-<h1>Editar remédio</h1>
+<div class="d-flex flex-row bd-highlight mb-3">
+  <h1 class="bd-highlight">Editar remédio</h1>
+  <%= link_to 'Voltar', medicines_path, class: "m-3 bd-highlight" %>
+</div>
 
 <%= render 'form', medicine: @medicine %>
-
-<%= link_to 'Detalhes', @medicine %> |
-<%= link_to 'Voltar', medicines_path %>
