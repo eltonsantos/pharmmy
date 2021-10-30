@@ -7,7 +7,7 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
       user ||= User.new # guest user (not logged in)
-      if user.role == "admin" or user.role == 1 or user.role == :admin
+      if user.role == "admin" or user.role == 1 or user.role == :admin or user.role == 'admin'
         can :manage, Medicine
         can :manage, Category
       else
