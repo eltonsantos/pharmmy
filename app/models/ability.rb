@@ -8,11 +8,10 @@ class Ability
     #
       user ||= User.new # guest user (not logged in)
       if user.role == "admin" or user.role == 1 or user.role == :admin or user.role == 'admin'
-        can :manage, Medicine
-        can :manage, Category
+        can :manage, :all
       else
-        can :read, Medicine
-        can :read, Category
+        can :read, :all
+        can :create, :all
       end
     #
     # The first argument to `can` is the action you are giving the user
