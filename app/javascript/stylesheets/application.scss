@@ -52,6 +52,17 @@ a {
   width: 500px;
 }
 
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-fluid, .img-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
 .card {
   position: relative;
   display: flex;
@@ -216,4 +227,19 @@ p {
 
 .btn-sign-out {
   text-decoration: none
+}
+
+.assinatura {
+  margin: 0 auto;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #fff;
+}
+
+.assinatura a {
+  text-decoration: none;
+}
+
+.assinatura a:hover {
+  color: #4CE59C;
 }

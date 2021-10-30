@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row row-grid align-items-center">
         <div class="col-md-6 order-lg-2 ml-lg-auto">   
-          <%= image_tag("logo.svg", class: "logo") %>
+          <%= image_tag("logo.svg", class: "logo img-fluid img-center") %>
         </div>
         <div class="col-lg-6 order-lg-1 mt-0">
           <div class="card bg-gradient-secondary shadow shadow-lg--hover mt-5">
@@ -38,6 +38,21 @@
 
             <% end %>
           </div>
+        </div>      
+      </div>
+      <div class="row row-grid">
+        <div class="col-md-8 order-lg-2 ml-lg-auto align-items-center assinatura">
+          Desenvolvido por 
+          <%= link_to "Elton Santos", "https://eltonsantos.netlify.app/", target: '_blank' %>
+          <%= link_to "https://www.linkedin.com/in/eltonmelosantos/", target: '_blank' do %>
+            <i class="fab fa-linkedin"></i>
+          <% end %>
+          <%= link_to "https://github.com/eltonsantos", target: '_blank' do %>
+            <i class="fab fa-github"></i>
+          <% end %>
+          <%= mail_to "eltonaxl@hotmail.com" do %>
+            <i class="fas fa-envelope-square"></i>
+          <% end %>
         </div>
       </div>
     </div>
