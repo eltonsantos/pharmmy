@@ -44,6 +44,8 @@
 
 <br>
 
-<%= link_to new_category_path, class: "btn btn-success btn-margin" do %>
-  Nova Categoria
+<% if can? :manage, Category %>
+  <%= link_to new_category_path, class: "btn btn-success btn-margin" do %>
+    Nova Categoria
+  <% end %>
 <% end %>

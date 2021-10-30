@@ -86,6 +86,8 @@
 <% end %>
 <br>
 
-<%= link_to new_medicine_path, class: "btn btn-success btn-margin" do %>
-  Novo Remédio
+<% if can? :manage, Medicine %>
+  <%= link_to new_medicine_path, class: "btn btn-success btn-margin" do %>
+    Novo Remédio
+  <% end %>
 <% end %>
