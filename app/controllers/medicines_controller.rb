@@ -5,8 +5,12 @@ class MedicinesController < ApplicationController
 
   # GET /medicines or /medicines.json
   def index
-    @q = Medicine.ransack(params[:q])
-    @medicines = @q.result
+    if current_user.role == :admin
+      @q = Medicine.ransack(params[:q])
+      @medicines = @q.result
+    else
+      @medicines = Medicine.where(user_id: current_user.id)
+    end   
   end
 
   # GET /medicines/1 or /medicines/1.json
@@ -15,7 +19,7 @@ class MedicinesController < ApplicationController
 
   # GET /medicines/new
   def new
-    @medicine = Medicine.new
+    @medicine = Medicine.new(user_id: current_user.id)
   end
 
   # GET /medicines/1/edit
@@ -67,6 +71,6 @@ class MedicinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def medicine_params
-      params.require(:medicine).permit(:picture, :name, :quantity, :medicine_validity, :medicine_insert, :used_to, :purchase_date, category_ids: [])
+      params.require(:medicine).permit(:picture, :name, :quantity, :medicine_validity, :medicine_insert, :used_to, :purchase_date, :user_id, category_ids: [])
     end
 end

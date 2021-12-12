@@ -1,5 +1,5 @@
 class AddUserToMedicines < ActiveRecord::Migration[6.1]
   def change
-    add_reference :medicines, :user, null: false, foreign_key: true
+    add_reference :medicines, :user, null: true, foreign_key: true
   end
 end

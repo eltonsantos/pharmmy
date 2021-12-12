@@ -5,12 +5,12 @@ class CategoriesController < ApplicationController
   
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.where(user_id: current_user.id)
   end
 
   # GET /categories/new
   def new
-    @category = Category.new
+    @category = Category.new(user_id: current_user.id)
   end
 
   # GET /categories/1/edit
@@ -62,6 +62,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :user_id)
     end
 end

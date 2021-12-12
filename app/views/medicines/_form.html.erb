@@ -5,6 +5,7 @@
 
   <div class="form-inputs">
     <%= f.file_field :picture %>
+    <%= f.input :user_id, as: :hidden %>
     <%= f.input :name, label: "Nome" %>
     <%= f.input :quantity, label: "Quantidade" %>
     <%= f.input :medicine_validity, label: "Validade", input_html: { class: "datepicker" }  %>

@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   # load_and_authorize_resource
   
   def index
-    @medicines = Medicine.all
+    @medicine = Medicine.where(user_id: current_user.id)
+    @category = Category.where(user_id: current_user.id)
   end
 end

@@ -1,11 +1,16 @@
 <h1>Farmacinha</h1>
 
-<% if Medicine.last == nil %>
-  <p>Não foi possível atualizar os remédios</p>
+<% if @medicine.last == nil and @category.last == nil %>
+  <p>
+    Seja bem vindo a PharmMy. Sua farmacinha particular e online!
+    No momento você não tem nada cadastrado no sistema.
+
+    <p>Para começar a usar a PharmMy comece cadastrando a categoria <%= link_to "aqui", new_category_path %></p>
+  </p>
 <% else %>  
   <p>Lista de remédios que tenho em casa | Atualizado em:
     <span class="badge bg-dark">
-      <%= Medicine.last.updated_at.strftime("%d/%m/%Y") %>
+      <%= @medicine.last ? @medicine.last.updated_at.strftime("%d/%m/%Y") : "---" %>
     </span> 
   </p>
 
@@ -16,7 +21,7 @@
       <%= link_to medicines_path, class: "btn btn-primary" do %>
         Remédios cadastrados
         <span class="badge bg-secondary">
-          <%= Medicine.count %>
+          <%= @medicine.count %>
         </span>
       <% end %>
     </div>
@@ -24,7 +29,7 @@
       <%= link_to categories_path, class: "btn btn-info" do %>
         Categorias cadastradas
         <span class="badge bg-secondary">
-          <%= Category.count %>
+          <%= @category.count %>
         </span>
       <% end %>
     </div>

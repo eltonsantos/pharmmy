@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email: ENV["ADMIN_EMAIL"], password: ENV["ADMIN_PASSWORD"], password_confirmation: ENV["ADMIN_PASSWORD"], role: ENV["ADMIN_ROLE"])
+User.create(email: "elton@elton.com", password: 123456, password_confirmation: 123456, role: 0)
+User.create(email: "teste@teste.com", password: 123456, password_confirmation: 123456, role: 0)
+User.create(email: "admin@admin.com", password: 123456, password_confirmation: 123456, role: 1)
 
-Category.create(name: "Dor de cabeça")
-Category.create(name: "Dor de barriga")
-Category.create(name: "Febre")
+Category.create(name: "Dor de cabeça", user_id: 1)
+Category.create(name: "Dor de barriga", user_id: 1)
+Category.create(name: "Febre", user_id: 1)
