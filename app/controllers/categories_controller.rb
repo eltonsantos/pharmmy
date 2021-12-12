@@ -5,7 +5,11 @@ class CategoriesController < ApplicationController
   
   # GET /categories or /categories.json
   def index
-    @categories = Category.where(user_id: current_user.id)
+    if current_user.role == 'admin'
+      @categories = Category.all
+    else
+      @categories = Category.where(user_id: current_user.id)
+    end
   end
 
   # GET /categories/new
