@@ -5,11 +5,12 @@ class MedicinesController < ApplicationController
 
   # GET /medicines or /medicines.json
   def index
-    if current_user.role == :admin
+    if current_user.role == 'admin'
       @q = Medicine.ransack(params[:q])
       @medicines = @q.result
     else
-      @medicines = Medicine.where(user_id: current_user.id)
+      @q = Medicine.where(user_id: current_user.id).ransack(params[:q])
+      @medicines = @q.result
     end   
   end
 

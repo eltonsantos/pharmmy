@@ -5,7 +5,7 @@
   <%= link_to 'Voltar', root_path, class: "m-3 bd-highlight" %>
 </div>
 
-<% if current_user.role == 'admin' %>
+<% if current_user.role == 'guest' %>
   <h5>Buscar por remédio</h5>
   <%= search_form_for @q, html: { class: 'row row-cols-lg-auto g-3 align-items-center search-form' } do |f| %>
     <div class="col-12">
