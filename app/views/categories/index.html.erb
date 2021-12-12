@@ -21,7 +21,7 @@
           <td><%= category.name %></td>
           <% if current_user.role == 'admin' %>
             <td>
-              <%= category.user.email %>
+              <%= category.user.name %>
             </td>
           <% end %>
           <td>
