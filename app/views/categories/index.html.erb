@@ -8,6 +8,9 @@
     <thead>
       <tr>
         <th>Nome</th>
+        <% if current_user.role == 'admin' %>
+          <th>Usuário</th>
+        <% end %>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -15,7 +18,12 @@
     <tbody>
       <% @categories.each do |category| %>
         <tr>
-          <td><%= category.name %></td>    
+          <td><%= category.name %></td>
+          <% if current_user.role == 'admin' %>
+            <td>
+              <%= category.user.email %>
+            </td>
+          <% end %>
           <td>
             <%= link_to edit_category_path(category) do %>
               <i class="fas fa-edit"></i>
