@@ -26,9 +26,9 @@
     <thead>
       <tr>
         <th>Nome</th>
-        <th>Quantidade</th>
-        <th>Validade</th>
+        <th>Quantidade</th>     
         <th>Data de compra</th>
+        <th>Validade</th>
         <th>Categoria</th>
         <% if current_user.role == 'admin' %>
           <th>Usuário</th>
@@ -43,12 +43,12 @@
           <td><%= medicine.name %></td>
           <td><%= medicine.quantity %></td>
           <td>
-            <i class="fa fa-tag green"></i>
-            <%= medicine.medicine_validity.strftime("%d/%m/%Y") %>
-          </td>
-          <td>
             <i class="fas fa-shopping-basket green"></i>
             <%= medicine.purchase_date.strftime("%d/%m/%Y") %>
+          </td>
+          <td>
+            <i class="fa fa-tag green"></i>
+            <%= medicine.medicine_validity.strftime("%d/%m/%Y") %>
           </td>
           <td>
             <% medicine.categories.each do |c| %>

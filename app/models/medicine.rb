@@ -3,5 +3,6 @@ class Medicine < ApplicationRecord
   has_many :categories, through: :medicine_categories
 
   belongs_to :user
+  
   has_one_attached :picture
 end

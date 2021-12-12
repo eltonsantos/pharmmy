@@ -8,11 +8,11 @@
     <%= f.input :user_id, as: :hidden %>
     <%= f.input :name, label: "Nome" %>
     <%= f.input :quantity, label: "Quantidade" %>
-    <%= f.input :medicine_validity, label: "Validade", input_html: { class: "datepicker" }  %>
+    <%= f.input :purchase_date, label: "Comprado em" %>  
     <%= f.input :medicine_insert, label: "Bula" %>
     <%= f.input :used_to, label: "Usado para"%>
-    <%= f.input :purchase_date, label: "Comprado em" %>
-    <%= f.association :categories, as: :check_boxes, label: "Categorias", wrapper: :vertical_collection_inline %>
+    <%= f.input :medicine_validity, label: "Validade", input_html: { class: "datepicker" }  %>
+    <%= f.association :categories, as: :check_boxes, collection: Category.where(user_id: current_user.id), label: "Categorias", wrapper: :vertical_collection_inline %>
   </div>
 
   <div class="form-actions">
