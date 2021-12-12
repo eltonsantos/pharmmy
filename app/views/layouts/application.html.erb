@@ -23,6 +23,7 @@
             <main class="container card shadow shadow-lg--hover mt-3">
               <div class="btn-margin-top">
                 <%=link_to destroy_user_session_path, method: :delete, class: "float-end btn-sign-out" do %>
+                  Bem vindo <%= current_user.email %>,
                   <i class="fas fa-sign-out-alt"></i>
                   Sair
                 <% end %>
