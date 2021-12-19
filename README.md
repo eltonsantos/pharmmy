@@ -3,5 +3,5 @@
 *Remedio*
 - nome, quantidade, validade, bula, tomar_para, data_compra
 
-*Categoria*
+*Sintoma*
 - nome

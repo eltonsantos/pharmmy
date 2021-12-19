@@ -1,9 +1,9 @@
 <div class="d-flex flex-row bd-highlight mb-3">
-  <h1 class="bd-highlight">Categorias</h1>
+  <h1 class="bd-highlight">Sintomas</h1>
   <%= link_to 'Voltar', root_path, class: "m-3 bd-highlight" %>
 </div>
 
-<% if @categories.any? %>
+<% if @symptoms.any? %>
   <table class="table table-striped table-edit">
     <thead>
       <tr>
@@ -16,21 +16,21 @@
     </thead>
 
     <tbody>
-      <% @categories.each do |category| %>
+      <% @symptoms.each do |symptom| %>
         <tr>
-          <td><%= category.name %></td>
+          <td><%= symptom.name %></td>
           <% if current_user.role == 'admin' %>
             <td>
-              <%= category.user.name %>
+              <%= symptom.user.name %>
             </td>
           <% end %>
           <td>
-            <%= link_to edit_category_path(category) do %>
+            <%= link_to edit_symptom_path(symptom) do %>
               <i class="fas fa-edit"></i>
             <% end %>
           </td>
           <td>
-            <%= link_to category, method: :delete, data: { confirm: 'Tem certeza?' } do %>
+            <%= link_to symptom, method: :delete, data: { confirm: 'Tem certeza?' } do %>
               <i class="fas fa-times-circle red"></i>
             <% end %>
           </td>
@@ -39,11 +39,11 @@
     </tbody>
   </table>
 <% else %>
-  Não há categoria cadastrada
+  Não há sintoma cadastrado
 <% end %>
 
 <br>
 
-<%= link_to new_category_path, class: "btn btn-success btn-margin-bottom" do %>
-  Nova Categoria
+<%= link_to new_symptom_path, class: "btn btn-success btn-margin-bottom" do %>
+  Nova sintoma
 <% end %>

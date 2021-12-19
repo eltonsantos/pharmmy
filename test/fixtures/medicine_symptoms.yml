@@ -2,8 +2,8 @@
 
 one:
   medicine: one
-  category: one
+  symptom: one
 
 two:
   medicine: two
-  category: two
+  symptom: two

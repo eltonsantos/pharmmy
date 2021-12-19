@@ -1,6 +1,6 @@
 require "test_helper"
 
-class MedicineCategoryTest < ActiveSupport::TestCase
+class SymptomTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

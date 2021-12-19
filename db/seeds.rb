@@ -12,6 +12,6 @@ User.create(name: ENV["ADMIN_NAME"], email: ENV["ADMIN_EMAIL"], password: ENV["A
 # User.create(name: "Ericson Santos", email: "eric@eric.com", password: 123456, password_confirmation: 123456, role: 0)
 # User.create(name: "Administrador", email: "admin@admin.com", password: 123456, password_confirmation: 123456, role: 1)
 
-# Category.create(name: "Dor de cabeça", user_id: 1)
-# Category.create(name: "Dor de barriga", user_id: 1)
-# Category.create(name: "Febre", user_id: 1)
+# Symptom.create(name: "Dor de cabeça", user_id: 1)
+# Symptom.create(name: "Dor de barriga", user_id: 1)
+# Symptom.create(name: "Febre", user_id: 1)

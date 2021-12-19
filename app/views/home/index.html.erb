@@ -1,11 +1,11 @@
 <h1>PharmMy</h1>
 
-<% if @medicine.last == nil and @category.last == nil %>
+<% if @medicine.last == nil and @symptom.last == nil %>
   <p>
     Seja bem vindo a PharmMy. Sua farmacinha particular e online!
     No momento você não tem nada cadastrado no sistema.
 
-    <p>Para começar a usar a PharmMy comece cadastrando a categoria <%= link_to "aqui", new_category_path %></p>
+    <p>Para começar a usar a PharmMy comece cadastrando um sintoma <%= link_to "aqui", new_symptom_path %></p>
   </p>
 <% else %>  
   <p>Lista de remédios que tenho em casa | Atualizado em:
@@ -26,10 +26,10 @@
       <% end %>
     </div>
     <div class="col-4">
-      <%= link_to categories_path, class: "btn btn-info" do %>
-        Categorias cadastradas
+      <%= link_to symptoms_path, class: "btn btn-info" do %>
+        Sintomas cadastrados
         <span class="badge bg-secondary">
-          <%= @category.count %>
+          <%= @symptom.count %>
         </span>
       <% end %>
     </div>

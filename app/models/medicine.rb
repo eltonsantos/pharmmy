@@ -1,6 +1,6 @@
 class Medicine < ApplicationRecord
-  has_many :medicine_categories, dependent: :destroy
-  has_many :categories, through: :medicine_categories
+  has_many :medicine_symptoms, dependent: :destroy
+  has_many :symptoms, through: :medicine_symptoms
 
   belongs_to :user
   

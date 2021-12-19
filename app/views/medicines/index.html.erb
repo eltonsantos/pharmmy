@@ -9,7 +9,7 @@
     <%= f.input :name_cont, label: false, placeholder: 'Nome', class: 'form-control' %>
   </div>
   <div class="col-12">
-    <%= f.input :categories_medicine_categories_category_name_cont, label: false, placeholder: 'Categoria', class: 'form-control' %>
+    <%= f.input :symptoms_medicine_symptoms_symptom_name_cont, label: false, placeholder: 'Sintoma', class: 'form-control' %>
   </div>
   <div class="col-12">
     <%= f.button :button, name: '', class: 'btn-warning btn-align' do %>
@@ -29,7 +29,7 @@
         <th>Quantidade</th>     
         <th>Data de compra</th>
         <th>Validade</th>
-        <th>Categoria</th>
+        <th>Sintoma</th>
         <% if current_user.role == 'admin' %>
           <th>Usuário</th>
         <% end %>
@@ -51,7 +51,7 @@
             <%= medicine.medicine_validity.strftime("%d/%m/%Y") %>
           </td>
           <td>
-            <% medicine.categories.each do |c| %>
+            <% medicine.symptoms.each do |c| %>
               <span class="badge bg-info">
                 <%= c.name %>
               </span>

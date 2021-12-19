@@ -6,10 +6,10 @@ class HomeController < ApplicationController
   def index
     if current_user.role != "admin"
       @medicine = Medicine.where(user_id: current_user.id)
-      @category = Category.where(user_id: current_user.id)
+      @symptom = Symptom.where(user_id: current_user.id)
     else
       @medicine = Medicine.all
-      @category = Category.all
+      @symptom = Symptom.all
     end
   end
 end
